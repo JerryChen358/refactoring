@@ -4,17 +4,28 @@ public class Play {
     private String name;
     private String type;
 
-    public Play(String name, String type) {
-        this.name = name;
-        this.type = type;
+    public Play(String name1, String type1) {
+        this.name = name1;
+        this.type = type1;
     }
 
+    /**
+     * @return name of Play
+     */
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
+
+    /**
+     * @param name of play
+     */
+    public void setName(String name1) {
+        this.name = name1;
     }
+
+    /**
+     * @return the type of play
+     */
     public String getType() {
         return type;
     }

@@ -9,9 +9,9 @@ public class Invoice {
     private final String customer;
     private final List<Performance> performances;
 
-    public Invoice(String customer, List<Performance> performances) {
-        this.customer = customer;
-        this.performances = performances;
+    public Invoice(String customerName, List<Performance> performances1) {
+        this.customer = customerName;
+        this.performances = performances1;
     }
 
     public final String getCustomer() {

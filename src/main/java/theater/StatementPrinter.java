@@ -11,15 +11,21 @@ public class StatementPrinter {
     private Invoice invoice;
     private Map<String, Play> plays;
 
-    public StatementPrinter(Invoice invoice, Map<String, Play> plays) {
-        this.invoice = invoice;
-        this.plays = plays;
+    public StatementPrinter(Invoice invoice1, Map<String, Play> plays1) {
+        this.invoice = invoice1;
+        this.plays = plays1;
     }
 
+    /**
+     * @return the invoice
+     */
     public Invoice getInvoice() {
         return invoice;
     }
 
+    /**
+     * @return the map of plays
+     */
     public Map<String, Play> getPlays() {
         return plays;
     }
