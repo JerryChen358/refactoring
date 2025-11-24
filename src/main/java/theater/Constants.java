@@ -4,7 +4,6 @@ package theater;
  * Constants used in this program.
  */
 public final class Constants {
-
     // volume constants
     public static final int BASE_VOLUME_CREDIT_THRESHOLD = 30;
     public static final int COMEDY_EXTRA_VOLUME_FACTOR = 5;

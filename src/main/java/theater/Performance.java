@@ -4,7 +4,6 @@ package theater;
  * Class representing a performance of a play.
  */
 public class Performance {
-
     private String playID;
     private int audience;
 
