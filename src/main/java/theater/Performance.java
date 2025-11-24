@@ -8,19 +8,25 @@ public final class Performance {
     private final String playID;
     private final int audience;
 
-    public Performance(String playID1, int audience1) {
-        this.playID = playID1;
+    /**
+     * Constructs a Performance with the given play identifier and audience count.
+     *
+     */
+    public Performance(String playId1, int audience1) {
+        this.playID = playId1;
         this.audience = audience1;
     }
 
     /**
-     * @return play id
+     * Returns unique identifier of play
+     * @return playID
      */
     public String getPlayID() {
         return playID;
     }
 
     /**
+     * Returns the amount of people in the audience
      * @return audience count
      */
     public int getAudience() {

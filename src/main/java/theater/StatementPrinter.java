@@ -1,7 +1,9 @@
 package theater;
+
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Map;
+
 import static theater.Constants.*;
 
 /**
@@ -11,12 +13,18 @@ public class StatementPrinter {
     private Invoice invoice;
     private Map<String, Play> plays;
 
+    /**
+     * Constructor method
+     * @param invoice1
+     * @param plays1
+     */
     public StatementPrinter(Invoice invoice1, Map<String, Play> plays1) {
         this.invoice = invoice1;
         this.plays = plays1;
     }
 
     /**
+     * Returns the invoice for the play customer
      * @return the invoice
      */
     public Invoice getInvoice() {
@@ -24,6 +32,7 @@ public class StatementPrinter {
     }
 
     /**
+     * Returns hashmap
      * @return the map of plays
      */
     public Map<String, Play> getPlays() {
@@ -36,11 +45,13 @@ public class StatementPrinter {
      * @throws RuntimeException if one of the play types is not known
      */
     public String statement() {
-        StringBuilder result = new StringBuilder("Statement for " + invoice.getCustomer() + System.lineSeparator());
+        final StringBuilder result =
+                new StringBuilder("Statement for " + invoice.getCustomer() + System.lineSeparator());
 
         for (Performance performance : invoice.getPerformances()) {
             // print line for this order
-            result.append(String.format("  %s: %s (%s seats)%n", getPlay(performance).getName(), usd(getAmount(performance)), performance.getAudience()));
+            result.append(String.format("  %s: %s (%s seats)%n", getPlay(performance).getName(),
+                    usd(getAmount(performance)), performance.getAudience()));
         }
 
         result.append(String.format("Amount owed is %s%n", usd(getTotalAmount())));
@@ -72,8 +83,9 @@ public class StatementPrinter {
     private int getVolumeCredits(Performance performance) {
         int result = Math.max(performance.getAudience() - Constants.BASE_VOLUME_CREDIT_THRESHOLD, 0);
         // add extra credit for every five comedy attendees
-        if ("comedy".equals(getPlay(performance).getType())) result += performance.getAudience() / Constants.COMEDY_EXTRA_VOLUME_FACTOR;
-        return result;
+        if ("comedy".equals(getPlay(performance).getType())) result += performance.getAudience() /
+                Constants.COMEDY_EXTRA_VOLUME_FACTOR; {
+        return result;}
     }
 
     private Play getPlay(Performance performance) {
@@ -86,7 +98,8 @@ public class StatementPrinter {
             case "tragedy":
                 result = TRAGEDY_BASE_AMOUNT;
                 if (performance.getAudience() > Constants.TRAGEDY_AUDIENCE_THRESHOLD) {
-                    result += TRAGEDY_OVER_BASE_CAPACITY_PER_PERSON * (performance.getAudience() - TRAGEDY_AUDIENCE_THRESHOLD);
+                    result += TRAGEDY_OVER_BASE_CAPACITY_PER_PERSON * (performance.getAudience() -
+                            TRAGEDY_AUDIENCE_THRESHOLD);
                 }
                 break;
             case "comedy":
