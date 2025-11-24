@@ -1,5 +1,7 @@
-043f136 (HEAD -> main) Task 2.1
-fa873a3 (origin/main, origin/HEAD) Task 1.2
+99ca098 (HEAD -> main) Task 2.2
+95ffe31 (origin/main, origin/HEAD) Task 2.1 log txt file updated
+043f136 Task 2.1
+fa873a3 Task 1.2
 860046a Task 1.1
 e15393b Task 1.1 progress commit
 a44c5b5 Task 1.1 progress commit
@@ -7,3 +9,5 @@ a44c5b5 Task 1.1 progress commit
 ff5004e adding shortcut keys for Inline Variable (Re: Piazza question)
 b545fe2 clarifying extracted method names in README.md
 a0124c9 fixing starter file
+c8d9d38 adding starter files
+cbe4517 first commit
